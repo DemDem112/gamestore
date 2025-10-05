@@ -1,0 +1,71 @@
+<header class="app-header">
+    <nav class="nav-links">
+        <a href="/main" class="logo">GameStoreHome</a>
+        <a href="/main">Games</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+    <div class="header-tools">
+        <div class="search-box">
+            <input type="text" placeholder="Search games...">
+            <span class="clear-search">x</span>
+        </div>
+        <a href="#" class="icon-link">
+            <mat-icon>shopping_cart</mat-icon>
+        </a>
+        <a href="#" class="icon-link">
+            <mat-icon>person</mat-icon>
+        </a>
+    </div>
+</header>
+
+<main class="profile-container">
+    <div class="profile-layout-card">
+        
+        <div class="profile-info-column">
+            <div class="info-card">
+                <div class="avatar-section">
+                    <mat-icon class="profile-icon">account_circle</mat-icon>
+                    <h2 class="display-name">John Doe</h2>
+                    <hr class="divider">
+                </div>
+                
+                <div class="contact-detail">
+                    <mat-icon class="detail-icon">email</mat-icon>
+                    <p>JohnDoe@example.com</p>
+                </div>
+                
+                <div class="contact-detail">
+                    <mat-icon class="detail-icon">location_on</mat-icon>
+                    <p>New York, USA</p>
+                </div>
+                
+                <hr class="divider-small">
+
+                <div class="action-buttons">
+                    <button (click)="onEdit()" mat-stroked-button class="edit-btn">Edit Profile</button>
+                    <button (click)="onSingOut()" mat-stroked-button class="billing-btn">Sign Out</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="my-library-column">
+            <div class="library-card">
+                <h2 class="library-title">My Library</h2>
+
+                <div class="game-item-list">
+                    <div class="game-item" *ngFor="let item of [1, 2, 3, 4, 5]">
+                        <mat-icon class="game-placeholder-icon">image</mat-icon>
+                        <div class="game-details">
+                            <p class="game-title">TESTING GAME</p>
+                            <p class="game-metadata">RPG, Action, Open World</p>
+                        </div>
+                        <button mat-flat-button class="download-button">Download</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</main>

@@ -1,0 +1,41 @@
+<div class="register-page">
+  <mat-card class="register-card">
+    <mat-card-title class="register-title">Register</mat-card-title>
+    
+    <mat-card-content>
+      <form> 
+        
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Display Name</mat-label>
+          <input matInput type="text" placeholder="Display Name">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" placeholder="Email">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" placeholder="Password">
+          </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Confirm Password</mat-label>
+          <input matInput type="password" placeholder="Confirm Password">
+        </mat-form-field>
+
+        <div class="register-button-container">
+            <button (click)="onSingOut()" mat-raised-button color="primary" type="submit">
+                Register
+            </button>
+        </div>
+
+        <p class="login-link">
+          Already Account? <a href="#">Login</a>
+        </p>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,87 @@
+<header class="app-header">
+  <nav class="nav-links">
+    <a href="/main" class="logo">GameStoreHome</a>
+    <a href="/main">Games</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+  <div class="header-tools">
+    <div class="search-box">
+      <input type="text" placeholder="Search games..." />
+      <span class="clear-search">x</span>
+    </div>
+    <a href="#" class="icon-link">
+      <mat-icon>shopping_cart</mat-icon>
+    </a>
+    <a (click)="onProfile()" class="icon-link">
+      <mat-icon>person</mat-icon>
+    </a>
+  </div>
+</header>
+
+<div class="profile-container">
+  <mat-card class="profile-card profile-overview">
+    <div class="profile-header">
+      <mat-icon class="profile-icon">person</mat-icon>
+      <h2 class="user-name">John Doe</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="profile-detail">
+      <mat-icon class="detail-icon">email</mat-icon>
+      <p class="detail-text">JohnDoe@example.com</p>
+    </div>
+
+    <div class="profile-detail">
+      <mat-icon class="detail-icon">place</mat-icon>
+      <p class="detail-text">New York, USA</p>
+    </div>
+
+    <div class="profile-actions">
+      <button (click)="onProfile()" mat-stroked-button class="confirm-button">Confirm</button>
+      <button (click)="onSingOut()" mat-stroked-button class="delete-button">Delete this Account</button>
+    </div>
+  </mat-card>
+
+  <mat-card class="profile-card billing-info">
+    <h2 class="billing-title">Billing Information</h2>
+
+    <form class="billing-form">
+      <div class="form-row">
+        <mat-form-field appearance="outline" class="half-width">
+          <mat-label>First Name</mat-label>
+          <input matInput placeholder="First Name" value="John" />
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="half-width">
+          <mat-label>Last Name</mat-label>
+          <input matInput placeholder="Last Name" value="Doe" />
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" placeholder="Email" value="johndoe@example.com" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Address</mat-label>
+        <input matInput placeholder="Address" value="123 Main St." />
+      </mat-form-field>
+
+      <div class="form-row three-cols">
+        <mat-form-field appearance="outline" class="one-third-width">
+          <mat-label>City</mat-label>
+          <input matInput placeholder="City" value="New York" />
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="one-third-width">
+          <mat-label>State</mat-label>
+          <input matInput placeholder="State" value="NY" />
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="one-third-width">
+          <mat-label>ZIP Code</mat-label>
+          <input matInput placeholder="ZIP Code" value="10001" />
+        </mat-form-field>
+      </div>
+    </form>
+  </mat-card>
+</div>

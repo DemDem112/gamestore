@@ -1,0 +1,225 @@
+// src/app/pages/profile/profile.scss
+
+// ------------------------------------
+// 1. HEADER STYLES
+// ------------------------------------
+$header-height: 60px;
+$primary-color: #000; // สีดำสำหรับข้อความ
+$border-color: #333; // สีเส้นขอบ
+
+.app-header {
+  display: grid;
+  grid-template-columns: 3fr 2fr; // แบ่งส่วนลิงก์/โลโก้ กับ ส่วนค้นหา/ไอคอน
+  align-items: center;
+  padding: 0 40px;
+  height: $header-height;
+  border-bottom: 1px solid $border-color;
+  font-family: Arial, sans-serif;
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    .logo {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    a {
+      text-decoration: none;
+      color: $primary-color;
+    }
+  }
+
+  .header-tools {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      border: 1px solid $border-color;
+      padding: 0 10px;
+      height: 30px;
+
+      input {
+        border: none;
+        outline: none;
+        padding-right: 5px;
+        font-size: 14px;
+      }
+      .clear-search {
+        cursor: pointer;
+        color: #999;
+      }
+    }
+
+    .icon-link {
+        color: $primary-color;
+        text-decoration: none;
+        // ใช้ mat-icon ใน Angular Material
+        mat-icon {
+            font-size: 20px;
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+        }
+    }
+  }
+}
+
+
+// ------------------------------------
+// 2. PROFILE LAYOUT STYLES
+// ------------------------------------
+.profile-container {
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+  background-color: #fff;
+}
+
+.profile-layout-card {
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  border: 1px solid $border-color; /* ขอบหลักรอบเนื้อหาทั้งหมด */
+  padding: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+// ------------------------------------
+// 2.1 คอลัมน์ซ้าย: User Info
+// ------------------------------------
+.profile-info-column {
+  flex: 1; /* กินพื้นที่ 1 ส่วน */
+  padding: 30px;
+  border-right: 1px solid $border-color; /* เส้นแบ่งคอลัมน์ */
+
+  .avatar-section {
+    text-align: center;
+    margin-bottom: 20px;
+
+    .profile-icon {
+      font-size: 80px;
+      width: 80px;
+      height: 80px;
+      margin-bottom: 10px;
+    }
+
+    .display-name {
+      margin: 10px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid $border-color;
+      width: 80%;
+      margin: 20px auto;
+    }
+  }
+
+  .contact-detail {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+
+    .detail-icon {
+      margin-right: 10px;
+      color: $primary-color;
+      font-size: 20px;
+    }
+    p {
+        margin: 0;
+    }
+  }
+
+  .divider-small {
+    border: none;
+    border-top: 1px solid $border-color;
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+
+    .edit-btn, .billing-btn {
+      padding: 5px 15px;
+      border: 1px solid $primary-color;
+      border-radius: 0;
+      font-size: 14px;
+      // mat-stroked-button
+    }
+  }
+}
+
+// ------------------------------------
+// 2.2 คอลัมน์ขวา: My Library
+// ------------------------------------
+.my-library-column {
+  flex: 2; /* กินพื้นที่ 2 ส่วน */
+  padding: 30px;
+
+  .library-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .game-item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .game-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee; /* เส้นแบ่งรายการเกม */
+    padding-bottom: 15px;
+    
+    &:last-child {
+        border-bottom: none; /* รายการสุดท้ายไม่ต้องมีเส้นแบ่ง */
+        padding-bottom: 0;
+    }
+
+    .game-placeholder-icon {
+        font-size: 50px;
+        width: 50px;
+        height: 50px;
+        margin-right: 15px;
+        color: #999;
+    }
+
+    .game-details {
+      flex-grow: 1;
+
+      .game-title {
+        font-weight: bold;
+        margin: 0 0 5px 0;
+      }
+      .game-metadata {
+        font-size: 13px;
+        color: #666;
+        margin: 0;
+      }
+    }
+
+    .download-button {
+      background-color: $primary-color;
+      color: #fff;
+      padding: 5px 20px;
+      // mat-flat-button
+    }
+  }
+}
